@@ -10,6 +10,7 @@ public class towerNormal : MonoBehaviour
 
     public float shootSpeed;
     public float range;
+    public Vector2 enemyPosition;
 
     private void Awake()
     {
@@ -29,24 +30,28 @@ public class towerNormal : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("enemy1"))
         {
-            Debug.Log("boo");
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            enemyPosition = collision.transform.position;
+            GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
         }
-        if (collision.gameObject.CompareTag("enemy2"))
-        {
+        //if (collision.gameObject.CompareTag("enemy2"))
+        //{
+        //    enemyPosition = collision.transform.position;
+        //    GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+        //}
+        //if (collision.gameObject.CompareTag("enemy3"))
+        //{
+        //    enemyPosition = collision.transform.position;
+        //    GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+        //}
+        //if (collision.gameObject.CompareTag("enemy4"))
+        //{
+        //    enemyPosition = collision.transform.position;
+        //    GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+        //}
 
-        }
-        if (collision.gameObject.CompareTag("enemy3"))
-        {
-
-        }
-        if (collision.gameObject.CompareTag("enemy4"))
-        {
-
-        }
     }
 }
