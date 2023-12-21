@@ -21,24 +21,22 @@ public class Normalbullet : MonoBehaviour
 
     private void Awake()
     {
+        rigidBody = GetComponent<Rigidbody2D>();
         towerScript = GameObject.FindGameObjectWithTag("towerNormal").GetComponent<towerNormal>();
         angle = Vector2.Angle(transform.position, towerScript.enemyPosition);
-        x = Mathf.Cos(angle * Mathf.PI / 180);
-        y = Mathf.Sin(angle * Mathf.PI / 180);
+        x = Mathf.Cos(angle * Mathf.PI) * bulletSpeed;
+        y = Mathf.Sin(angle * Mathf.PI) * bulletSpeed;
+        newForce = new Vector2(x, y);
+        rigidBody.AddForce(newForce, ForceMode2D.Force);
     }
 
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
         
     }
 
     void Update()
     {
-        newForce = new Vector2(x, y);
-
-        rigidBody.velocity = new Vector2(0, 0);
-
-        rigidBody.AddForce(newForce, ForceMode2D.Force);
+        rigidBody.velocity = new Vector2(x, y);
     }
 }
