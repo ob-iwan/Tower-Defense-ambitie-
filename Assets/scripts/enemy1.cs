@@ -28,7 +28,7 @@ public class enemy1 : MonoBehaviour
     {
         if (health <= 0)
         {
-            enemyPrefab.SetActive(false);
+            Destroy(this.gameObject);
             ded = true;
         }
     }
@@ -38,7 +38,7 @@ public class enemy1 : MonoBehaviour
         if (collision.gameObject.CompareTag("bullet1"))
         {
             health--;
-            Destroy(collision);
+            Destroy(collision.gameObject);
         }
     }
 }

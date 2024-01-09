@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8581601984614303416}
-  - component: {fileID: 3905810933595555811}
   - component: {fileID: 1117885611767081022}
   - component: {fileID: 4608311084968944468}
   m_Layer: 0
@@ -35,21 +34,6 @@ Transform:
   - {fileID: 8989581712650869032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3905810933595555811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5933253960429735221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b10f6b2c1ca333b459b30ddd12b3e961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  bulletSpeed: 5
-  angle: 0
 --- !u!61 &1117885611767081022
 BoxCollider2D:
   m_ObjectHideFlags: 0
