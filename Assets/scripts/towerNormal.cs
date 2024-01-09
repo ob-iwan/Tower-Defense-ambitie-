@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,52 +7,37 @@ using UnityEngine;
 public class towerNormal : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    private CircleCollider2D circleCollider;
 
     public float shootSpeed;
     public float range;
-    public Vector2 enemyPosition;
+    public GameObject enemyPosition;
+    private float timer = 1f;
 
-    private void Awake()
-    {
-
-    }
 
     // Start is called before the first frame update
     void Start()
     {
-        circleCollider = GetComponent<CircleCollider2D>();
-        circleCollider.radius = range;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("enemy1"))
+        if (timer < shootSpeed) 
         {
-            enemyPosition = collision.transform.position;
-            GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+            timer += Time.deltaTime;
         }
-        //if (collision.gameObject.CompareTag("enemy2"))
-        //{
-        //    enemyPosition = collision.transform.position;
-        //    GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
-        //}
-        //if (collision.gameObject.CompareTag("enemy3"))
-        //{
-        //    enemyPosition = collision.transform.position;
-        //    GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
-        //}
-        //if (collision.gameObject.CompareTag("enemy4"))
-        //{
-        //    enemyPosition = collision.transform.position;
-        //    GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
-        //}
-
+        
+        if (Vector3.Distance(transform.position, enemyPosition.transform.position) <= range)
+        {
+            if (timer >= 1f)
+            {
+                timer = 0f;
+                GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                Vector3 directionToPlayer = (enemyPosition.transform.position - transform.position).normalized;
+                bullet.GetComponent<Rigidbody2D>().velocity = directionToPlayer * 10f;
+                Destroy(bullet, 2);
+            }
+        }
     }
 }

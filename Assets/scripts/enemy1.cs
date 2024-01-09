@@ -32,4 +32,13 @@ public class enemy1 : MonoBehaviour
             ded = true;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("bullet1"))
+        {
+            health--;
+            Destroy(collision);
+        }
+    }
 }
