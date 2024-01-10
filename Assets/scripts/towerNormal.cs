@@ -14,6 +14,7 @@ public class towerNormal : MonoBehaviour
     public float shotOffsetY;
     public float bulletLifetime;
     public float range;
+    public float bulletSpeed;
     private enemy1 enemyScript;
     private float timer = 1f;
 
@@ -52,7 +53,7 @@ public class towerNormal : MonoBehaviour
                         timer = 0f;
                         GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
                         Vector3 directionToEnemy = (enemyScript.transform.position + new Vector3(0, shotOffsetY, 0) - transform.position).normalized;
-                        bullet.GetComponent<Rigidbody2D>().velocity = directionToEnemy * 10f;
+                        bullet.GetComponent<Rigidbody2D>().velocity = directionToEnemy * bulletSpeed;
                         Destroy(bullet, bulletLifetime);
                     }
                 }

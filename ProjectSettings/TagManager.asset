@@ -7,6 +7,8 @@ TagManager:
   - killAble
   - enemy1
   - towerNormal
+  - bullet1
+  - spawner
   layers:
   - Default
   - TransparentFX
