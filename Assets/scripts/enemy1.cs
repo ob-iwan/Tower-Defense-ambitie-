@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class enemy1 : MonoBehaviour
 {
-    private GameObject enemyPrefab;
     private enemySpawner spawnerScript;
+    private shopSystem shopScript;
 
     public int health;
     public int damage;
@@ -20,8 +20,10 @@ public class enemy1 : MonoBehaviour
 
     private void Awake()
     {
-        enemyPrefab = GameObject.Find("enemy1");
+        // get spawner script for its position
+        // get shopscript to add loot
         spawnerScript = GameObject.FindGameObjectWithTag("spawner").GetComponent<enemySpawner>();
+        shopScript = GameObject.FindGameObjectWithTag("generalSystems").GetComponent<shopSystem>();
 
         X = spawnerScript.transform.position.x;
         Y = spawnerScript.transform.position.y + Random.Range(-6f, 2f);
@@ -38,11 +40,15 @@ public class enemy1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // move enemy
         transform.position = new Vector3(X, Y, Z);
         X += speed * Time.deltaTime;
 
         if (health <= 0)
         {
+            // if enemy dies add loot and destroy gamebject
+            shopScript.inPocketMeat += Random.Range(1, 8);
+            shopScript.inPocketWood += Random.Range(5, 12);
             Destroy(this.gameObject);
             ded = true;
         }
@@ -50,6 +56,7 @@ public class enemy1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // if enemy hit by bullet decrease life by one and destroy bullet object
         if (collision.gameObject.CompareTag("bullet1"))
         {
             health--;

@@ -250,11 +250,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5933253960429735221, guid: 300c32a10d3fd654a8275962ff8427a7, type: 3}
   circleCollider: {fileID: 7251978960400664735}
-  shootSpeed: 0.1
-  shotOffsetY: 0.2
+  shootSpeed: 2
+  shotOffsetY: 0
   bulletLifetime: 5
   range: 20
-  bulletSpeed: 20
+  bulletSpeed: 16
 --- !u!58 &7251978960400664735
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ TagManager:
   - towerNormal
   - bullet1
   - spawner
+  - generalSystems
   layers:
   - Default
   - TransparentFX
