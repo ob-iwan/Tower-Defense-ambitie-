@@ -10,6 +10,7 @@ TagManager:
   - bullet1
   - spawner
   - generalSystems
+  - houseText
   layers:
   - Default
   - TransparentFX

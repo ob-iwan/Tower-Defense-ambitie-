@@ -23,7 +23,7 @@ public class towerPlacing : MonoBehaviour
         if (spawnerSystem.setNormal)
         {
             // spawn a normal tower at mouse position
-            if (Input.GetMouseButton(0) && spawnerSystem.world.y <= -4.46f && spawnerSystem.world.x >= -9f)
+            if (Input.GetMouseButton(0) && spawnerSystem.world.y <= -4.46f)
             {
                 towerNormal = Instantiate(normalPrefab, spawnerSystem.world + new Vector3(0f, 0f, 10f), Quaternion.identity);
                 spawnerSystem.setNormal = false;

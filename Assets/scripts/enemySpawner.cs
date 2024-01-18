@@ -47,4 +47,10 @@ public class enemySpawner : MonoBehaviour
             }
         }
     }
+
+    public void startGame()
+    {
+        // if clicked on start next wave button activate timer
+        timerActive = true;
+    }
 }

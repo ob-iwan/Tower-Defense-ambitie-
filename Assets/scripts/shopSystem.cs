@@ -6,11 +6,13 @@ using UnityEngine.UI;
 using TMPro;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 using System;
+using TMPro.Examples;
 
 public class shopSystem : MonoBehaviour
 {
     public TextMeshProUGUI inPocketMeatText;
     public TextMeshProUGUI inPocketWoodText;
+    public TextMeshProUGUI inPocketCoinsText;
     public TextMeshProUGUI normal;
 
     public int normalMeat = 20;
@@ -18,6 +20,7 @@ public class shopSystem : MonoBehaviour
 
     public int inPocketMeat;
     public int inPocketWood;
+    public int inPocketCoins;
 
     public bool normalPlaceAble;
     public bool reset;
@@ -31,6 +34,7 @@ public class shopSystem : MonoBehaviour
 
         inPocketMeatText.text = "Meat: " + inPocketMeat;
         inPocketWoodText.text = "Wood: " + inPocketWood;
+        inPocketCoinsText.text = "coins: " + inPocketCoins;
     }
     private void Update()
     {
@@ -52,8 +56,10 @@ public class shopSystem : MonoBehaviour
 
         normal.text = normalMeat + " meat\n" +
                       normalWood + " wood";
+
         inPocketMeatText.text = "Meat: " + inPocketMeat;
         inPocketWoodText.text = "Wood: " + inPocketWood;
+        inPocketCoinsText.text = "coins: " + inPocketCoins;
     }
     public void normalBought()
     {
