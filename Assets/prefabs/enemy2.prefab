@@ -5020,11 +5020,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3541919806320827560}
   - component: {fileID: 2827496432653884342}
-  - component: {fileID: 5963769726238646043}
+  - component: {fileID: -1111798429336802005}
   - component: {fileID: 2301490386555186077}
   m_Layer: 0
   m_Name: enemy2
-  m_TagString: enemy1
+  m_TagString: enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5081,7 +5081,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.66}
   m_Size: {x: 1.1, y: 3.55}
   m_Direction: 0
---- !u!114 &5963769726238646043
+--- !u!114 &-1111798429336802005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5090,7 +5090,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2853273453854128151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dadcfbebe5fe4904b91d86965f819800, type: 3}
+  m_Script: {fileID: 11500000, guid: fd091c025643a0c4a93a69be3d57e0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blood: {fileID: 988341867741052730}

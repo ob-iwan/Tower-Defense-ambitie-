@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ambitie game/mainGame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ambitie game/menu.unity
+    guid: 7f6abcc9f39886a4aac9efdd4d31e983
+  - enabled: 1
+    path: Assets/Scenes/ambitie game/ded.unity
+    guid: 16dfa583b98fde646996e76df6804fdf
   m_configObjects: {}

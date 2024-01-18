@@ -49,8 +49,8 @@ public class enemy1 : MonoBehaviour
         if (health <= 0)
         {
             // if enemy dies add loot and destroy gamebject
-            shopScript.inPocketMeat += Random.Range(1, 8);
-            shopScript.inPocketWood += Random.Range(5, 12);
+            shopScript.inPocketMeat += Random.Range(3, 12);
+            shopScript.inPocketWood += Random.Range(8, 19);
             child.gameObject.transform.parent = null;
             blood.Play();
             Destroy(this.gameObject);

@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class enemy1Menu : MonoBehaviour
+public class enemy2 : MonoBehaviour
 {
-    private enemySpawnerMenu spawnerScript;
+    private enemySpawner spawnerScript;
     private shopSystem shopScript;
     public ParticleSystem blood;
     public GameObject child;
@@ -23,12 +24,19 @@ public class enemy1Menu : MonoBehaviour
     {
         // get spawner script for its position
         // get shopscript to add loot
-        spawnerScript = GameObject.FindGameObjectWithTag("spawner").GetComponent<enemySpawnerMenu>();
+        spawnerScript = GameObject.FindGameObjectWithTag("spawner").GetComponent<enemySpawner>();
+        shopScript = GameObject.FindGameObjectWithTag("generalSystems").GetComponent<shopSystem>();
 
         X = spawnerScript.transform.position.x;
         Y = spawnerScript.transform.position.y + Random.Range(-6f, 2f);
         Z = spawnerScript.transform.position.z;
         transform.position = new Vector3(X, Y, Z);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
@@ -40,6 +48,9 @@ public class enemy1Menu : MonoBehaviour
 
         if (health <= 0)
         {
+            // if enemy dies add loot and destroy gamebject
+            shopScript.inPocketMeat += Random.Range(13, 23);
+            shopScript.inPocketWood += Random.Range(17, 33);
             child.gameObject.transform.parent = null;
             blood.Play();
             Destroy(this.gameObject);

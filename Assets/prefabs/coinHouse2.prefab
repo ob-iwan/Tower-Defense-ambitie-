@@ -1146,8 +1146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed30e4990a8f90d4ea71be96ceca55ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generation: 1.4
+  generation: 2
   housePrefab: {fileID: 6422135595213639030, guid: 0954164c1beffb7439bcbef3f4c557b0, type: 3}
+  text: {fileID: 0}
 --- !u!1 &6511766342023790313
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ TagManager:
   - spawner
   - generalSystems
   - houseText
+  - scene
+  - enemy2
   layers:
   - Default
   - TransparentFX

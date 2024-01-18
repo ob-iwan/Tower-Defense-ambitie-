@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class enemySpawner : MonoBehaviour
 {
-    private float timer;
+    public float timer;
+    public float timerInGameTime;
+    public float timer2;
+    public float timer3;
+    public float timer4;
     public float timerLength;
+    public float timerLength2;
+    public float timerSpeeder = 1;
+    public float timerSpeeder2 = 1;
     public GameObject enemyPrefab;
-
-    public bool timerActive = false;
-    public bool loop = false;
-
-
+    public GameObject enemy2Prefab;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +25,22 @@ public class enemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timerInGameTime += Time.deltaTime;
+
         // if start next wave button is not pressed the timer wont count
-        if (timerActive)
+        if (timerInGameTime >= 10)
         {
-            timer += Time.deltaTime;
+            timer += timerSpeeder * Time.deltaTime;
+            timer2 += (timerSpeeder / 2) * Time.deltaTime;
         }
 
-        if (timer >= timerLength && loop)
+        if (timerInGameTime >= 150)
+        {
+            timer3 += timerSpeeder2 * Time.deltaTime;
+            timer4 += (timerSpeeder2 / 2) * Time.deltaTime;
+        }
+
+        if (timer >= timerLength)
         {
             // every time the timer reaches the chosen time
             // spawn an enemy at random height and reset timer
@@ -37,20 +49,23 @@ public class enemySpawner : MonoBehaviour
             timer += Random.Range(0f, 4f);
         }
 
-        if (timer > 3)
+        if (timer2 >= 15)
         {
-            for (int i = 0; i < 1; i++)
-            {
-                GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-                loop = true;
-                timer = -5;
-            }
+            timerSpeeder += 0.1f;
+            timer2 = 0;
         }
-    }
 
-    public void startGame()
-    {
-        // if clicked on start next wave button activate timer
-        timerActive = true;
+        if (timer3 >= timerLength2)
+        {
+            GameObject enemy = Instantiate(enemy2Prefab, transform.position, Quaternion.identity);
+            timer3 = 0;
+            timer3 += Random.Range(0f, 8f);
+        }
+
+        if (timer4 >= 40)
+        {
+            timerSpeeder2 += 0.2f;
+            timer4 = 0;
+        }
     }
 }

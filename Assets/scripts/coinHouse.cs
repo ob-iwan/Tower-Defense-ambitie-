@@ -30,7 +30,7 @@ public class coinHouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawnerScript.timerActive)
+        if (spawnerScript.timerInGameTime >= 10)
         {
             timer += generation * Time.deltaTime;
         }
@@ -50,24 +50,24 @@ public class coinHouse : MonoBehaviour
             GameObject newTower = Instantiate(housePrefab, transform.position, Quaternion.identity);
             shop.inPocketMeat -= 40;
             shop.inPocketWood -= 80;
-            text.text = "cost: 60 meat and 120 wood";
+            text.text = "cost: 100 meat and 145 wood";
         }
 
-        if (shop.inPocketMeat >= 60 && shop.inPocketWood >= 120 && gameObject.name == "coinHouse2(Clone)")
-        {
-            Destroy(gameObject);
-            GameObject newTower = Instantiate(housePrefab, transform.position, Quaternion.identity);
-            shop.inPocketMeat -= 60;
-            shop.inPocketWood -= 120;
-            text.text = "cost: 100 meat and 180 wood";
-        }
-
-        if (shop.inPocketMeat >= 100 && shop.inPocketWood >= 180 && gameObject.name == "coinHouse3(Clone)")
+        if (shop.inPocketMeat >= 100 && shop.inPocketWood >= 145 && gameObject.name == "coinHouse2(Clone)")
         {
             Destroy(gameObject);
             GameObject newTower = Instantiate(housePrefab, transform.position, Quaternion.identity);
             shop.inPocketMeat -= 100;
-            shop.inPocketWood -= 180;
+            shop.inPocketWood -= 145;
+            text.text = "cost: 210 meat and 270 wood";
+        }
+
+        if (shop.inPocketMeat >= 210 && shop.inPocketWood >= 270 && gameObject.name == "coinHouse3(Clone)")
+        {
+            Destroy(gameObject);
+            GameObject newTower = Instantiate(housePrefab, transform.position, Quaternion.identity);
+            shop.inPocketMeat -= 210;
+            shop.inPocketWood -= 270;
             text.text = "Max upgraded";
         }
     }
