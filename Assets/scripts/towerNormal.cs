@@ -67,7 +67,7 @@ public class towerNormal : MonoBehaviour
                         timer = 0f;
                         GameObject bullet1 = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
                         Vector3 directionToEnemy1 = (enemyScript.transform.position +
-                                                    new Vector3(0, 0 + UnityEngine.Random.Range(-2f, 3f), 0) -
+                                                    new Vector3(0 + UnityEngine.Random.Range(-0.5f, 0.5f), 0 + UnityEngine.Random.Range(-1.5f, 2f), 0) -
                                                     transform.position).normalized;
                         bullet1.GetComponent<Rigidbody2D>().velocity = directionToEnemy1 * bulletSpeed;
                         Destroy(bullet1, bulletLifetime);
@@ -77,7 +77,7 @@ public class towerNormal : MonoBehaviour
                         {
                             GameObject bullet2 = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
                             Vector3 directionToEnemy2 = (enemyScript.transform.position +
-                                                        new Vector3(0, 0 + UnityEngine.Random.Range(-2f, 3f), 0) -
+                                                        new Vector3(0 + UnityEngine.Random.Range(-0.5f, 0.5f), 0 + UnityEngine.Random.Range(-1.5f, 2f), 0) -
                                                         transform.position).normalized;
                             bullet2.GetComponent<Rigidbody2D>().velocity = directionToEnemy2 * bulletSpeed;
                             Destroy(bullet2, bulletLifetime);
@@ -97,7 +97,7 @@ public class towerNormal : MonoBehaviour
                         timer = 0f;
                         GameObject bullet1 = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
                         Vector3 directionToEnemy1 = (enemyScript2.transform.position +
-                                                    new Vector3(0, 0 + UnityEngine.Random.Range(-2f, 3f), 0) -
+                                                    new Vector3(0, 0 + UnityEngine.Random.Range(-1.5f, 2f), 0) -
                                                     transform.position).normalized;
                         bullet1.GetComponent<Rigidbody2D>().velocity = directionToEnemy1 * bulletSpeed;
                         Destroy(bullet1, bulletLifetime);
@@ -107,7 +107,7 @@ public class towerNormal : MonoBehaviour
                         {
                             GameObject bullet2 = Instantiate(bulletPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
                             Vector3 directionToEnemy2 = (enemyScript2.transform.position +
-                                                        new Vector3(0, 0 + UnityEngine.Random.Range(-2f, 3f), 0) -
+                                                        new Vector3(0, 0 + UnityEngine.Random.Range(-1.5f, 2f), 0) -
                                                         transform.position).normalized;
                             bullet2.GetComponent<Rigidbody2D>().velocity = directionToEnemy2 * bulletSpeed;
                             Destroy(bullet2, bulletLifetime);

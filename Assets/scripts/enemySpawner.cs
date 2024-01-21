@@ -9,10 +9,14 @@ public class enemySpawner : MonoBehaviour
     public float timer2;
     public float timer3;
     public float timer4;
+    public float timer5;
+    public float timer6;
     public float timerLength;
     public float timerLength2;
     public float timerSpeeder = 1;
     public float timerSpeeder2 = 1;
+    public float exponential = 1;
+    public float exponential2 = 1;
     public GameObject enemyPrefab;
     public GameObject enemy2Prefab;
 
@@ -33,11 +37,18 @@ public class enemySpawner : MonoBehaviour
             timer += timerSpeeder * Time.deltaTime;
             timer2 += (timerSpeeder / 2) * Time.deltaTime;
         }
-
+        if (timerInGameTime >= 60)
+        {
+            timer5 += Time.deltaTime;
+        }
         if (timerInGameTime >= 150)
         {
             timer3 += timerSpeeder2 * Time.deltaTime;
             timer4 += (timerSpeeder2 / 2) * Time.deltaTime;
+        }
+        if (timerInGameTime >= 210)
+        {
+            timer6 += Time.deltaTime;
         }
 
         if (timer >= timerLength)
@@ -66,6 +77,18 @@ public class enemySpawner : MonoBehaviour
         {
             timerSpeeder2 += 0.2f;
             timer4 = 0;
+        }
+
+        if (timer5 >= 20)
+        {
+            exponential += 0.08f;
+            timer5 = 0;
+        }
+
+        if (timer6 >= 20)
+        {
+            exponential2 += 0.16f;
+            timer6 = 0;
         }
     }
 }

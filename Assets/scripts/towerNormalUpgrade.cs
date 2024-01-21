@@ -21,11 +21,11 @@ public class towerNormalUpgrade : MonoBehaviour
             GameObject newTower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
             shop.inPocketCoins -= 50;
         }
-        if (shop.inPocketCoins >= 100 && gameObject.name != "towerNormal(Clone)")
+        if (shop.inPocketCoins >= 200 && gameObject.name != "towerNormal(Clone)")
         {
             Destroy(gameObject);
             GameObject newTower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
-            shop.inPocketCoins -= 100;
+            shop.inPocketCoins -= 200;
         }
     }
 }

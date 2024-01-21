@@ -4092,7 +4092,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1587249983}
         m_TargetAssemblyTypeName: sceneLoader, Assembly-CSharp
-        m_MethodName: game
+        m_MethodName: info
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

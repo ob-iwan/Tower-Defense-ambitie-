@@ -5096,8 +5096,7 @@ MonoBehaviour:
   blood: {fileID: 988341867741052730}
   child: {fileID: 19468672000758220}
   health: 3
-  damage: 2
-  speed: 3
+  speed: 2.6
   ded: 0
 --- !u!50 &2301490386555186077
 Rigidbody2D:

@@ -10,7 +10,7 @@ public class enemy2 : MonoBehaviour
     public ParticleSystem blood;
     public GameObject child;
 
-    public int health;
+    public float health;
 
     public float speed;
 
@@ -31,6 +31,8 @@ public class enemy2 : MonoBehaviour
         Y = spawnerScript.transform.position.y + Random.Range(-6f, 2f);
         Z = spawnerScript.transform.position.z;
         transform.position = new Vector3(X, Y, Z);
+
+        health *= spawnerScript.exponential2;
     }
 
     // Start is called before the first frame update
@@ -49,7 +51,7 @@ public class enemy2 : MonoBehaviour
         if (health <= 0)
         {
             // if enemy dies add loot and destroy gamebject
-            shopScript.inPocketMeat += Random.Range(13, 23);
+            shopScript.inPocketMeat += Random.Range(14, 24);
             shopScript.inPocketWood += Random.Range(17, 33);
             child.gameObject.transform.parent = null;
             blood.Play();

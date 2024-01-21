@@ -3163,7 +3163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'cost: 40 meat and 80 wood'
+  m_text: 'cost: 50 meat and 80 wood'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6405,14 +6405,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  timerInGameTime: 0
+  timerInGameTime: 10
   timer2: 0
   timer3: 0
   timer4: 0
-  timerLength: 10
+  timer5: 0
+  timer6: 0
+  timerLength: 12
   timerLength2: 30
   timerSpeeder: 1
   timerSpeeder2: 1
+  exponential: 1
+  exponential2: 1
   enemyPrefab: {fileID: 2853273453854128151, guid: 7466cde9f6a9fa7409a5b790f1b5b0a5, type: 3}
   enemy2Prefab: {fileID: 2853273453854128151, guid: 21ed32fdfa2aa674cb5a8b0c6dc24c86, type: 3}
 --- !u!4 &1854864974
@@ -6621,7 +6625,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'upgrade cost: 50 coins, 100 coins'
+  m_text: 'upgrade cost: 50 coins, 200 coins'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6950,9 +6954,9 @@ MonoBehaviour:
   normal: {fileID: 437924415}
   normalMeat: 20
   normalWood: 50
-  inPocketMeat: 45
-  inPocketWood: 110
-  inPocketCoins: 0
+  inPocketMeat: 30
+  inPocketWood: 60
+  inPocketCoins: 10
   normalPlaceAble: 0
   reset: 0
 --- !u!114 &1955462738

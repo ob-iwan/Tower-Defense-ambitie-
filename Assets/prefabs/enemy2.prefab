@@ -5096,6 +5096,7 @@ MonoBehaviour:
   blood: {fileID: 988341867741052730}
   child: {fileID: 19468672000758220}
   health: 10
+  exponential: 1
   speed: 1.5
   ded: 0
 --- !u!50 &2301490386555186077

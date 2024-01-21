@@ -70,8 +70,8 @@ public class shopSystem : MonoBehaviour
             inPocketMeat -= normalMeat;
             inPocketWood -= normalWood;
 
-            normalMeat += 5;
-            normalWood += 10;
+            normalMeat += 9;
+            normalWood += 12;
         }
     }
 }

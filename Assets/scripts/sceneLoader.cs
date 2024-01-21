@@ -22,4 +22,25 @@ public class sceneLoader : MonoBehaviour
             menu();
         }
     }
+
+    public void info()
+    {
+        SceneManager.LoadScene("gameInfo");
+    }
+    public void info1()
+    {
+        SceneManager.LoadScene("gameInfo 1");
+    }
+    public void info2()
+    {
+        SceneManager.LoadScene("gameInfo 2");
+    }
+    public void info3()
+    {
+        SceneManager.LoadScene("gameInfo 3");
+    }
+    public void info4()
+    {
+        SceneManager.LoadScene("gameInfo 4");
+    }
 }

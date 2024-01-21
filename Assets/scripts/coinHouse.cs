@@ -44,30 +44,30 @@ public class coinHouse : MonoBehaviour
 
     public void upgrade()
     {
-        if (shop.inPocketMeat >= 40 && shop.inPocketWood >= 80 && gameObject.name == "coinHouse")
+        if (shop.inPocketMeat >= 50 && shop.inPocketWood >= 80 && gameObject.name == "coinHouse")
         {
             Destroy(gameObject);
             GameObject newTower = Instantiate(housePrefab, transform.position, Quaternion.identity);
-            shop.inPocketMeat -= 40;
+            shop.inPocketMeat -= 50;
             shop.inPocketWood -= 80;
-            text.text = "cost: 100 meat and 145 wood";
+            text.text = "cost: 150 meat and 170 wood";
         }
 
-        if (shop.inPocketMeat >= 100 && shop.inPocketWood >= 145 && gameObject.name == "coinHouse2(Clone)")
+        if (shop.inPocketMeat >= 150 && shop.inPocketWood >= 170 && gameObject.name == "coinHouse2(Clone)")
         {
             Destroy(gameObject);
             GameObject newTower = Instantiate(housePrefab, transform.position, Quaternion.identity);
-            shop.inPocketMeat -= 100;
-            shop.inPocketWood -= 145;
-            text.text = "cost: 210 meat and 270 wood";
+            shop.inPocketMeat -= 150;
+            shop.inPocketWood -= 170;
+            text.text = "cost: 360 meat and 370 wood";
         }
 
-        if (shop.inPocketMeat >= 210 && shop.inPocketWood >= 270 && gameObject.name == "coinHouse3(Clone)")
+        if (shop.inPocketMeat >= 360 && shop.inPocketWood >= 370 && gameObject.name == "coinHouse3(Clone)")
         {
             Destroy(gameObject);
             GameObject newTower = Instantiate(housePrefab, transform.position, Quaternion.identity);
-            shop.inPocketMeat -= 210;
-            shop.inPocketWood -= 270;
+            shop.inPocketMeat -= 360;
+            shop.inPocketWood -= 370;
             text.text = "Max upgraded";
         }
     }
