@@ -671,7 +671,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5933253960429735221, guid: 300c32a10d3fd654a8275962ff8427a7, type: 3}
   circleCollider: {fileID: 7251978960400664735}
   button: {fileID: 229826900927180327}
-  shootSpeed: 1.5
+  shootSpeed: 0
   shotOffsetY: 0
   bulletLifetime: 5
   range: 25
