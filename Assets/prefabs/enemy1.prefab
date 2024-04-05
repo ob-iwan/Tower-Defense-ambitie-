@@ -5098,6 +5098,7 @@ MonoBehaviour:
   health: 3
   speed: 2.6
   ded: 0
+  walking: 1
 --- !u!50 &2301490386555186077
 Rigidbody2D:
   serializedVersion: 4
